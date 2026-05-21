@@ -1,0 +1,47 @@
+.home-hero {
+  min-height: calc(100vh - 70px);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.home-overlay {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+
+  background: rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 2rem;
+}
+
+.home-overlay h1 {
+  font-size: 5rem;
+  color: #facc15;
+
+  text-shadow:
+    0 0 10px #facc15,
+    0 0 20px #f59e0b;
+}
+
+.home-overlay p {
+  max-width: 700px;
+
+  font-size: 1.3rem;
+  line-height: 1.7;
+
+  color: white;
+}

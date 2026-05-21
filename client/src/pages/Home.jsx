@@ -1,11 +1,20 @@
+import bgImage from "../assets/gogeta.png";
+import "./Home.css";
+
 function Home() {
   return (
-    <section>
-      <h1>Welcome to WonderVerse</h1>
-      <p>
-        Explore immersive worlds, creative stories, character galleries,
-        and digital experiences built inside the WonderVerse universe.
-      </p>
+    <section
+      className="home-hero"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className="home-overlay">
+        <h1>WonderVerse</h1>
+
+        <p>
+          Dragon Ball inspired digital art, characters,
+          and creative worlds.
+        </p>
+      </div>
     </section>
   );
 }
