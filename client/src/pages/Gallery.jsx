@@ -20,6 +20,8 @@ function Gallery() {
 
   return (
   <section className="gallery-page">
+
+    
     <h1>Gallery</h1>
 
     <article className="featured-artwork key={featuredArtwork.id}">
@@ -46,7 +48,7 @@ function Gallery() {
                 ease: "easeOut",
             }}
      />
-     
+
         </AnimatePresence>
 
       <div>

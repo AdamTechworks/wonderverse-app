@@ -10,6 +10,11 @@ body {
   color: #f8fafc;
 }
 
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
 .page-container {
   padding: 3rem 2rem;
   max-width: 1200px;
@@ -31,4 +36,9 @@ p {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #cbd5e1;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
 }
