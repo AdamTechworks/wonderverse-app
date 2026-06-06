@@ -1,0 +1,10 @@
+.theme-toggle {
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.85);
+  color: #f8fafc;
+  font-size: 1.4rem;
+  cursor: pointer;
+}

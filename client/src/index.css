@@ -19,7 +19,7 @@ body {
 }
 
 .page-container {
-  padding: 3rem 2rem;
+  padding: 6rem 2rem 3rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -39,4 +39,15 @@ p {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #cbd5e1;
+}
+
+/*themetoggle*/
+
+body.light-theme {
+  background: #f8fafc;
+  color: #020617;
+}
+
+body.light-theme p {
+  color: #334155;
 }

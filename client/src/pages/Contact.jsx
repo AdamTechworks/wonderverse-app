@@ -1,11 +1,14 @@
 function Contact() {
   return (
     <section>
-      <h1>Contact</h1>
+       <h1>Contact & Collaborations</h1>
+
       <p>
-        Reach out for collaborations, questions, creative partnerships,
-        or to learn more about WonderVerse.
+        Interested in digital artwork, commissions, creative projects,
+        collaborations, or software development opportunities? I'd love
+        to connect.
       </p>
+      
     </section>
   );
 }
