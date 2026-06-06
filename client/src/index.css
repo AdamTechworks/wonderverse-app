@@ -37,8 +37,3 @@ p {
   line-height: 1.7;
   color: #cbd5e1;
 }
-
-.app-content {
-  position: relative;
-  z-index: 1;
-}

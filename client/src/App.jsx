@@ -7,14 +7,12 @@ import Gallery from "./pages/Gallery";
 import Bio from "./pages/Bio";
 import Contact from "./pages/Contact";
 
-import ParticleBackground from "./components/ParticleBackground";
 
 function App() {
   return (
     <>
-      <ParticleBackground />
 
-      <div className="app-content">
+
       <Navbar />
 
       <main className="page-container">
@@ -25,7 +23,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
     </main>
-   </div>
   </>
   );
 }
