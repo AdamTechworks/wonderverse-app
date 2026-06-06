@@ -6,7 +6,10 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #0f172a;
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.25), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.18), transparent 35%),
+    #0f172a;
   color: #f8fafc;
 }
 
@@ -29,7 +32,7 @@ section {
 
 h1 {
   font-size: 3rem;
-  color: #a78bfa;
+  color: #8bb2fa;
 }
 
 p {
