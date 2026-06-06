@@ -1,17 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./ThemeToggle.css";
 
 function ThemeToggle() {
-  const [isDark, setIsDark] = useState(true);
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || "dark"
+  );
 
-  function handleToggle() {
-    setIsDark(!isDark);
-    document.body.classList.toggle("light-theme");
+  useEffect(() => {
+    document.body.classList.remove("dark-theme", "light-theme");
+    document.body.classList.add(`${theme}-theme`);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  function toggleTheme() {
+    setTheme((currentTheme) =>
+      currentTheme === "dark" ? "light" : "dark"
+    );
   }
 
   return (
-    <button className="theme-toggle" onClick={handleToggle}>
-      {isDark ? "☾" : "☀"}
+    <button
+      className="theme-toggle"
+      onClick={toggleTheme}
+      aria-label="Toggle light and dark theme"
+    >
+      {theme === "dark" ? "☾" : "☀"}
     </button>
   );
 }
