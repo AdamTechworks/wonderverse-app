@@ -9,10 +9,47 @@ function Gallery() {
   const featuredArtwork = artworks[currentIndex];
 
   const [selectedArtwork, setSelectedArtwork] = useState(artworks[0]);
+
+  const [isImageOpen, setIsImageOpen] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
+
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+
+  function handleMouseDown() {
+    setIsDragging(true);
+  }
+
+  function handleMouseUp() {
+    setIsDragging(false);
+  }
+
+  function handleMouseMove(event) {
+    if (!isDragging || zoomLevel <= 1) return;
+
+    setPosition((prev) => ({
+      x: prev.x + event.movementX,
+      y: prev.y + event.movementY,
+    }));
+  }
+
+  function handleWheelZoom(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  setZoomLevel((zoom) => {
+    const nextZoom =
+      event.deltaY < 0 ? zoom + 0.04 : zoom - 0.04;
+
+    return Math.min(3, Math.max(1, nextZoom));
+  });
+}
+
   const detailSectionRef = useRef(null);
 
   function handleArtworkClick(artwork) {
   setSelectedArtwork(artwork);
+    setZoomLevel(1);
 
   setTimeout(() => {
     detailSectionRef.current?.scrollIntoView({
@@ -31,6 +68,20 @@ function Gallery() {
 
     return () => clearInterval(timer);
   }, []);
+
+
+  useEffect(() => {
+  if (isImageOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [isImageOpen]);
+
 
   return (
   <section className="gallery-page">
@@ -91,7 +142,15 @@ function Gallery() {
 
     <section className="timelapse-section" ref={detailSectionRef}>
       <div className="selected-artwork-preview">
-        <img src={selectedArtwork.image} alt={selectedArtwork.title} />
+        <img
+          src={selectedArtwork.image}
+          alt={selectedArtwork.title}
+          onClick={() => {
+            setIsImageOpen(true);
+            setZoomLevel(1);
+            setPosition({ x: 0, y: 0 });
+          }}
+        />
 
         <div>
           <p>{selectedArtwork.category}</p>
@@ -104,6 +163,32 @@ function Gallery() {
         <p>Timelapse Coming Soon</p>
       </div>
     </section>
+
+
+{isImageOpen && (
+  <div className="image-viewer" onClick={() => setIsImageOpen(false)}>
+    <button className="close-viewer">×</button>
+
+    <img
+      src={selectedArtwork.image}
+      alt={selectedArtwork.title}
+      draggable="false"
+      onDragStart={(event) => event.preventDefault()}
+      onWheel={handleWheelZoom}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseUp}
+      onClick={(event) => event.stopPropagation()}
+      style={{
+        transform: `
+          translate(${position.x}px, ${position.y}px)
+          scale(${zoomLevel})
+        `,
+      }}
+    />
+  </div>
+)}
 
   </section>
  );

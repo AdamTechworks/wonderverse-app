@@ -126,6 +126,8 @@
   }
 }
 
+/*timelapse*/
+
 .timelapse-section {
   display: grid;
   grid-template-columns: 1fr 400px;
@@ -163,4 +165,62 @@
   .timelapse-section {
     grid-template-columns: 1fr;
   }
+}
+
+/*zoom*/
+
+.selected-artwork-preview img {
+  cursor: zoom-in;
+}
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(2, 6, 23, 0.92);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: auto;
+  padding: 3rem;
+}
+
+.image-viewer img {
+  max-width: 85vw;
+  max-height: 85vh;
+  height: auto;
+  object-fit: contain;
+
+  transition: transform 0.2s ease;
+  cursor: zoom-in;
+}
+
+.close-viewer {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f8fafc;
+  color: #020617;
+
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.image-viewer img {
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: grab;
+}
+
+.image-viewer img:active {
+  cursor: grabbing;
 }
