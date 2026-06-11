@@ -40,6 +40,19 @@ function Home() {
         being part of the journey.
       </p>
     </section>
+
+    <section className="site-description-section">
+    <h2>About WonderVerse</h2>
+
+    <p>
+      WonderVerse is a digital art portfolio inspired by anime, character
+      design, and visual storytelling. The site is also a full-stack
+      development project where I can practice React, modern UI design,
+      responsive layouts, routing, CRUD functionality, and backend
+      integration as the app grows.
+    </p>
+  </section>
+
     </>
   );
 }

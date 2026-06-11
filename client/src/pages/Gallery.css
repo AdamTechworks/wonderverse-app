@@ -126,3 +126,41 @@
   }
 }
 
+.timelapse-section {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 20px;
+  background: #020617;
+  border: 1px solid #1e293b;
+
+  align-items: start;
+}
+
+.selected-artwork-preview img {
+  width: 100%;
+  max-height: 650px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.timelapse-preview {
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+}
+
+.gallery-card {
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .timelapse-section {
+    grid-template-columns: 1fr;
+  }
+}
