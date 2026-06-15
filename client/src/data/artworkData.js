@@ -1,7 +1,11 @@
 import gogeta from "../assets/gogeta-cropped.jpg";
+import gogeta1 from "../assets/timelapses/gogeta1.mp4"
 import gokuBlue from "../assets/goku-blue.png";
+import gokublue1 from "../assets/timelapses/gokublue1.mp4"
 import gokuBlack from "../assets/goku-black-cropped.jpg";
+import gokublack from "../assets/timelapses/gokublack.mp4";
 import gokuSS4 from "../assets/goku-ssj4.png";
+import gokussj4 from "../assets/timelapses/gokussj4.mp4";
 import ultraEgoVegeta from "../assets/vegeta.png";
 import beastGohan from "../assets/gohan.png";
 
@@ -15,7 +19,7 @@ export const artworks = [
     image: gogeta,
     description:
       "A cinematic Gogeta illustration focused on energy balance, movement, and high-impact aura composition.",
-    timelapse: "",
+    timelapse: gogeta1,
   },
 
   {
@@ -26,7 +30,7 @@ export const artworks = [
     image: gokuBlue,
     description:
       "An exploration of divine energy, color contrast, and layered lighting built around Super Saiyan Blue intensity.",
-    timelapse: "",
+    timelapse: gokublue1,
   },
 
   {
@@ -37,7 +41,7 @@ export const artworks = [
     image: gokuBlack,
     description:
       "A darker composition emphasizing atmosphere, destructive elegance, and the unsettling presence of Goku Black.",
-    timelapse: "",
+    timelapse: gokublack,
   },
 
   {
@@ -48,7 +52,7 @@ export const artworks = [
     image: gokuSS4,
     description:
       "Focused on primal design language, aggressive color work, and reinterpretation of the Super Saiyan 4 aesthetic.",
-    timelapse: "",
+    timelapse: gokussj4,
   },
 
   {

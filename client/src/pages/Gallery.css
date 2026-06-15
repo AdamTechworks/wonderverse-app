@@ -2,7 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+   max-width: 1600px;
+  margin: 0 auto;
 }
+
 
 .featured-artwork {
   display: grid;
@@ -38,21 +42,6 @@
 }
 
 
-.featured-image-frame {
-  position: relative;
-  min-height: 500px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.featured-image {
-  width: 100%;
-  max-height: 500px;
-  object-fit: contain;
-  border-radius: 16px;
-}
-
 .featured-artwork h2 {
   font-size: 2.5rem;
   color: #facc15;
@@ -81,7 +70,7 @@
   border-radius: 16px;
 
   overflow: hidden;
-
+  cursor: pointer;
   transition:
   transform 0.25s ease,
   border-color 0.25s ease,
@@ -130,8 +119,8 @@
 
 .timelapse-section {
   display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 2rem;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 0.5rem;
   margin-top: 3rem;
   padding: 2rem;
   border-radius: 20px;
@@ -143,23 +132,21 @@
 
 .selected-artwork-preview img {
   width: 100%;
-  max-height: 650px;
+  max-height: 800px;
   object-fit: contain;
   border-radius: 16px;
 }
 
 .timelapse-preview {
-  min-height: 400px;
+  height: 550px;
   display: grid;
   place-items: center;
   border-radius: 16px;
   background: #0f172a;
   border: 1px solid #1e293b;
+  overflow: hidden;
 }
 
-.gallery-card {
-  cursor: pointer;
-}
 
 @media (max-width: 900px) {
   .timelapse-section {
@@ -194,7 +181,9 @@
   object-fit: contain;
 
   transition: transform 0.2s ease;
-  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: grab;
 }
 
 .close-viewer {
@@ -215,12 +204,38 @@
   cursor: pointer;
 }
 
-.image-viewer img {
-  user-select: none;
-  -webkit-user-drag: none;
-  cursor: grab;
-}
+
 
 .image-viewer img:active {
   cursor: grabbing;
+}
+
+.timelapse-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+
+
+
+
+@media (min-width: 1400px) {
+  .featured-artwork {
+    grid-template-columns: 1.25fr 1fr;
+  }
+
+
+  .timelapse-section {
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  .selected-artwork-preview img {
+    max-height: 85vh;
+  }
+
+  .timelapse-preview {
+    height: 65vh;
+  }
 }

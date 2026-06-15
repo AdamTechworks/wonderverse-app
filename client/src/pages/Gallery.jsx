@@ -160,7 +160,17 @@ function Gallery() {
       </div>
 
       <div className="timelapse-preview">
-        <p>Timelapse Coming Soon</p>
+        {selectedArtwork.timelapse ? (
+        <video
+          src={selectedArtwork.timelapse}
+          controls
+          muted
+          loop
+          playsInline
+        />
+      ) : (
+    <p>Time-Lapse coming soon..</p>
+  )}
       </div>
     </section>
 
