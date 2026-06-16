@@ -162,6 +162,7 @@ function Gallery() {
       <div className="timelapse-preview">
         {selectedArtwork.timelapse ? (
         <video
+          className={selectedArtwork.videoClass || ""}
           src={selectedArtwork.timelapse}
           controls
           muted
