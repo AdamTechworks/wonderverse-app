@@ -33,10 +33,6 @@ function Navbar() {
             Gallery
           </NavLink>
 
-          <NavLink to="/bio" onClick={() => setIsOpen(false)}>
-            Bio
-          </NavLink>
-
           <NavLink to="/Inspiration" onClick={() => setIsOpen(false)}>
             Inspiration
           </NavLink>

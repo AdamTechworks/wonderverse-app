@@ -4,10 +4,12 @@ import "./Home.css";
 function Home() {
   return (
     <>
-    <section
-      className="home-hero"
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
+      <section className="home-hero">
+          <img
+            src={bgImage}
+            alt="Gogeta"
+            className="hero-image"
+          />
       <div className="home-overlay">
           <h1>WonderVerse</h1>
 
@@ -15,10 +17,15 @@ function Home() {
             Dragon Ball inspired digital art, characters,
             and creative worlds.
           </p>
+
+          <a className="hero-cta" href="#welcome">
+          Enter WonderVerse
+        </a>
+        
         </div>
       </section>
 
-      <section className="welcome-section">
+      <section id="welcome" className="welcome-section">
         <h2>Welcome</h2>
 
        <p>
@@ -52,6 +59,11 @@ function Home() {
       integration as the app grows.
     </p>
   </section>
+
+
+      <a className="gallery-cta" href="/gallery">
+              Enter Gallery
+      </a>
 
     </>
   );
