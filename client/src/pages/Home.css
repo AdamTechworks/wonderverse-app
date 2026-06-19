@@ -2,12 +2,11 @@
   width: 100vw;
   min-height: 100vh;
   margin-left: calc(50% - 50vw);
-
-  background-size: 100%;
+  background-size: 90%;
   background-position: center top;
   background-repeat: no-repeat;
-   background-color: #020617;
 
+  
 
 
   overflow: hidden;
@@ -16,16 +15,6 @@
 .home-overlay {
   width: 100%;
   min-height: 0px;
-
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.15) 0%,
-      rgba(0, 0, 0, 0.2) 60%,
-      rgba(2, 6, 23, 0.9) 100%
-    );
-
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,11 +1,15 @@
 .gallery-page {
+--page-width: min(2100px, calc(100vw - 4rem));
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 6rem 2rem 3rem;
+}
 
-  max-width: min(1800px, 96vw);
-  margin: 0 auto;
+.gallery-page h1 {
+  width: var(--page-width);
+  align-self: center;
 }
 
 
@@ -13,12 +17,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  background: #020617;
-  border: 1px solid #1e293b;
+  background: #17245f33;
+  border: 1px solid #1e293ba4;
   border-radius: 20px;
   padding: 2rem;
-  align-items: center;
-
+  width: calc(var(--page-width) * 0.94);
+  align-self: center;
   animation: slideFadeIn 0.9s ease both;
 }
 
@@ -37,7 +41,7 @@
 
 .featured-artwork img {
   width: 100%;
-  max-height: 500px;
+  max-height: 800px;
   object-fit: contain;
   border-radius: 16px;
 }
@@ -53,29 +57,44 @@
 }
 
 .gallery-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(360px, 1fr));
-
-  gap: 1.5rem;
-
+  width: calc(var(--page-width) * 0.90);
+  align-self: center;
+  columns: 3 340px;
+  column-gap: 1.5rem;
   margin-top: 2rem;
+
 }
 
+
+@media (max-width: 1450px) {
+  .gallery-grid {
+    width: 100%;
+  }
+}
+
+
 .gallery-card {
-  background: #020617;
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
 
-  border: 1px solid #1e293b;
-
+  background: #17245f33;
+  border: 1px solid #1e293ba4;
   border-radius: 16px;
-
   overflow: hidden;
   cursor: pointer;
+
   transition:
-  transform 0.25s ease,
-  border-color 0.25s ease,
-  box-shadow 0.25s ease;
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #0f172a;
 }
 
 .gallery-card:hover {
@@ -84,14 +103,6 @@
   box-shadow: 0 20px 60px rgba(124, 58, 237, 0.22);
 }
 
-.gallery-card img {
-  width: 100%;
-  height: 480px;
-
-  object-fit: cover;
-
-  background: #0f172a;
-}
 
 .gallery-card h3 {
   color: #facc15;
@@ -104,7 +115,7 @@
 .gallery-card p {
   padding: 0 1rem 1rem;
 
-  color: #cbd5e1;
+  color: #6aabfa8f;
 
   font-size: 0.95rem;
 }
@@ -120,14 +131,15 @@
 
 .timelapse-section {
   display: grid;
+  width: calc(var(--page-width) * 0.94);
+  align-self: center;
   grid-template-columns: 1.4fr 1fr;
   gap: 0.5rem;
   margin-top: 3rem;
   padding: 2rem;
   border-radius: 20px;
-  background: #020617;
-  border: 1px solid #1e293b;
-
+  background: #17245f33;
+  border: 1px solid #1e293ba4;
   align-items: start;
 }
 
@@ -176,6 +188,8 @@
   padding: 3rem;
 }
 
+
+
 .image-viewer img {
   max-width: 85vw;
   max-height: 85vh;
@@ -199,7 +213,7 @@
   border: none;
   border-radius: 50%;
 
-  background: #f8fafc;
+  background: #0f263d;
   color: #020617;
 
   font-size: 2rem;
@@ -219,7 +233,6 @@
   display: block;
 
   border-radius: 14px;
-  outline: 3px solid cyan;
 }
 
 .timelapse-preview video.ssj4-video {
@@ -244,7 +257,7 @@
   }
 
   .timelapse-preview {
-     height: 550px;;
+     height: 550px;
   }
 }
 
