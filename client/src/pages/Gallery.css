@@ -168,6 +168,7 @@
   }
 }
 
+
 /*zoom*/
 
 .selected-artwork-preview img {
@@ -226,6 +227,13 @@
   cursor: grabbing;
 }
 
+.timelapse-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
 .timelapse-preview video {
   width: 100%;
   height: 100%;
@@ -265,4 +273,62 @@
   .timelapse-section {
     grid-template-columns: 1fr;
   }
+}
+
+/*onClicked enlarge timelapse/ youtube link section*/
+
+.timelapse-note {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+
+  color: #94a3b8;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.youtube-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1rem;
+  padding: 0.9rem 1.6rem;
+
+  border-radius: 999px;
+  border: 1px solid rgba(250, 204, 21, 0.35);
+
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.25),
+    rgba(124, 58, 237, 0.25)
+  );
+
+  color: #facc15;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.youtube-button:hover {
+  transform: translateY(-3px);
+
+  border-color: #facc15;
+
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.4),
+    rgba(168, 85, 247, 0.4)
+  );
+
+  box-shadow: 0 12px 30px rgba(250, 204, 21, 0.2);
+}
+
+.youtube-button:active {
+  transform: translateY(-1px);
 }

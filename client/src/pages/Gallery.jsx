@@ -159,8 +159,9 @@ function Gallery() {
         </div>
       </div>
 
-      <div className="timelapse-preview">
-        {selectedArtwork.timelapse ? (
+        <div className="timelapse-column">
+    <div className="timelapse-preview">
+      {selectedArtwork.timelapse ? (
         <video
           className={selectedArtwork.videoClass || ""}
           src={selectedArtwork.timelapse}
@@ -170,10 +171,28 @@ function Gallery() {
           playsInline
         />
       ) : (
-    <p>Time-Lapse coming soon..</p>
-  )}
-      </div>
-    </section>
+        <p>Time-Lapse coming soon..</p>
+      )}
+    </div>
+
+    {selectedArtwork.timelapse && (
+      <p className="timelapse-note">
+        Preview the process here, or watch the complete drawing on YouTube.
+      </p>
+    )}
+
+    {selectedArtwork.youtube && (
+      <a
+        href={selectedArtwork.youtube}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="youtube-button"
+      >
+        ▶ Watch the Full Process
+      </a>
+    )}
+  </div>
+</section>
 
 
 {isImageOpen && (

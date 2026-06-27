@@ -54,6 +54,7 @@ export const artworks = [
       "Focused on primal design language, aggressive color work, and reinterpretation of the Super Saiyan 4 aesthetic.",
     timelapse: gokussj4,
     videoClass: "ssj4-video",
+    youtube:"https://www.youtube.com/watch?v=NEpDFcZHaSk",
   },
 
   {

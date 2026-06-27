@@ -2,15 +2,13 @@
   width: 100vw;
   min-height: 100vh;
   margin-left: calc(50% - 50vw);
-  background-size: 90%;
+ background-size: contain;
+background-color: #020617;
   background-position: center top;
   background-repeat: no-repeat;
-
-  
-
-
   overflow: hidden;
 }
+
 
 .home-overlay {
   width: 100%;
