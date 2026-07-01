@@ -49,7 +49,8 @@ function Gallery() {
 
   function handleArtworkClick(artwork) {
   setSelectedArtwork(artwork);
-    setZoomLevel(1);
+  setZoomLevel(1);
+  setPosition({ x: 0, y: 0 });
 
   setTimeout(() => {
     detailSectionRef.current?.scrollIntoView({
@@ -159,39 +160,62 @@ function Gallery() {
         </div>
       </div>
 
-        <div className="timelapse-column">
-    <div className="timelapse-preview">
-      {selectedArtwork.timelapse ? (
+
+      <div className="timelapse-column">
+  {selectedArtwork.timelapse && (
+    <>
+      <div className="timelapse-preview">
         <video
-          className={selectedArtwork.videoClass || ""}
           src={selectedArtwork.timelapse}
           controls
+          controlsList="nodownload"
+          disablePictureInPicture
           muted
           loop
           playsInline
         />
-      ) : (
-        <p>Time-Lapse coming soon..</p>
-      )}
-    </div>
+      </div>
 
-    {selectedArtwork.timelapse && (
       <p className="timelapse-note">
         Preview the process here, or watch the complete drawing on YouTube.
       </p>
-    )}
 
-    {selectedArtwork.youtube && (
+      {selectedArtwork.youtube && (
+        <a
+          href={selectedArtwork.youtube}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="youtube-button"
+        >
+          ▶ Watch the Full Process
+        </a>
+      )}
+    </>
+  )}
+
+  {!selectedArtwork.timelapse && selectedArtwork.inspiration && (
+    <div className="inspiration-process-card">
+      <img
+        src={selectedArtwork.inspiration.previewImage}
+        alt="Creative inspiration"
+        className="inspiration-image"
+      />
+
+      <h3>🎨 Creative Inspiration</h3>
+
+      <p>{selectedArtwork.inspiration.text}</p>
+
       <a
-        href={selectedArtwork.youtube}
+        href={selectedArtwork.inspiration.youtube}
         target="_blank"
         rel="noopener noreferrer"
         className="youtube-button"
       >
-        ▶ Watch the Full Process
+        ▶ Watch the Original Scene
       </a>
-    )}
-  </div>
+    </div>
+  )}
+</div>
 </section>
 
 

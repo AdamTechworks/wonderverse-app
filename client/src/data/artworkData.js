@@ -8,6 +8,8 @@ import gokuSS4 from "../assets/goku-ssj4.png";
 import gokussj4 from "../assets/timelapses/gokussj4.mp4";
 import ultraEgoVegeta from "../assets/vegeta.png";
 import beastGohan from "../assets/gohan.png";
+import inspoGohan from "../assets/inspogohan.webp";
+import inspoVegeta from "../assets/inspovegeta.jpg";
 
 
 export const artworks = [
@@ -20,6 +22,7 @@ export const artworks = [
     description:
       "A cinematic Gogeta illustration focused on energy balance, movement, and high-impact aura composition.",
     timelapse: gogeta1,
+    youtube: "https://www.youtube.com/watch?v=DgCF-396oJg",
   },
 
   {
@@ -31,6 +34,7 @@ export const artworks = [
     description:
       "An exploration of divine energy, color contrast, and layered lighting built around Super Saiyan Blue intensity.",
     timelapse: gokublue1,
+    youtube: "https://www.youtube.com/watch?v=piA31FvGzZU",
   },
 
   {
@@ -42,6 +46,7 @@ export const artworks = [
     description:
       "A darker composition emphasizing atmosphere, destructive elegance, and the unsettling presence of Goku Black.",
     timelapse: gokublack,
+    youtube: "https://www.youtube.com/watch?v=Kqp_49z6gqM",
   },
 
   {
@@ -53,7 +58,6 @@ export const artworks = [
     description:
       "Focused on primal design language, aggressive color work, and reinterpretation of the Super Saiyan 4 aesthetic.",
     timelapse: gokussj4,
-    videoClass: "ssj4-video",
     youtube:"https://www.youtube.com/watch?v=NEpDFcZHaSk",
   },
 
@@ -66,6 +70,12 @@ export const artworks = [
     description:
       "An energy-heavy Vegeta piece exploring destruction aura effects, sharp contrast, and dominant character posture.",
     timelapse: "",
+    inspiration: {
+    previewImage: inspoVegeta,
+    text:
+      "For this piece, I drew inspiration from Vegeta's fight with Granolah, focusing on the stance, energy, and dramatic lighting while creating my own interpretation.",
+    youtube:"https://www.youtube.com/watch?v=PH71ZLSGNdE"
+    }
   },
 
   {
@@ -76,6 +86,11 @@ export const artworks = [
     image: beastGohan,
     description:
       "A dramatic character showcase built around emotional intensity, explosive lighting, and transformation symbolism.",
-    timelapse: "",
-  },
+    inspiration: {
+    previewImage: inspoGohan,
+    text:
+      "For this piece, I drew inspiration from Gohan's Special Beam Cannon, focusing on the stance, energy, and dramatic lighting while creating my own interpretation.",
+    youtube:"https://www.youtube.com/watch?v=q8LsciU4o90"
+    }
+  }
 ];
