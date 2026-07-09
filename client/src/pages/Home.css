@@ -1,22 +1,40 @@
 .home-hero {
-  width: 100vw;
-  min-height: 100vh;
-  margin-left: calc(50% - 50vw);
- background-size: contain;
-background-color: #020617;
-  background-position: center top;
-  background-repeat: no-repeat;
+  width: 90%;
+  margin: 6rem auto 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 24px;
   overflow: hidden;
+  background: #020617;
+  border: 1px solid #1e293ba4;
 }
 
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.home-hero {
+  position: relative;
+}
 
 .home-overlay {
-  width: 100%;
-  min-height: 0px;
+  position: absolute;
+  inset: 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
   text-align: center;
+
+  background: rgba(0, 0, 0, 0.18);
 }
 
 .home-overlay h1 {
@@ -57,58 +75,49 @@ background-color: #020617;
   background: #39b353;
 }
 
-.hero-cta {
-  display: inline-block;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
-
-  padding: 1rem 2rem;
-
-  border-radius: 9px;
-
-  background: #8bb2fa;
-  color: #020617;
-
-  text-decoration: none;
-  font-weight: 700;
-
-  transition:
-    transform 0.25s ease,
-    background-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.hero-cta:hover {
-  background: #facc15;
-
-  transform: translateY(-3px);
-
-  box-shadow: 0 10px 30px rgba(250, 204, 21, 0.3);
-}
 
 .home-content {
-  width: 100%;
-  max-width: 2400px;
-
+  width: 90%;
+  max-width: 4000px;
   margin-inline: auto;
-
+  padding: 5rem 0;
   display: flex;
   flex-direction: column;
   gap: 5rem;
 }
 
 .home-section-card {
-  width: 100%;
+  width: 97%;
   box-sizing: border-box;
 
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 3rem;
-  text-align: center;
+
   padding: 3rem;
   border-radius: 20px;
+
   background: #17245f33;
   border: 1px solid #1e293ba4;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.home-section-card:nth-of-type(odd):hover {
+  transform: translateX(-12px) translateY(-6px);
+}
+
+.home-section-card:nth-of-type(even):hover {
+  transform: translateX(12px) translateY(-6px);
+}
+
+.home-section-card:hover {
+  border-color: rgba(167, 139, 250, 0.7);
+
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.22);
 }
 
 .section-image img {
@@ -116,6 +125,11 @@ background-color: #020617;
   display: block;
   border-radius: 20px;
   object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.home-section-card:hover .section-image img {
+  transform: scale(1.03);
 }
 
 .process-steps {
@@ -123,6 +137,7 @@ background-color: #020617;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1.5rem;
+  justify-content: center;
 }
 
 .process-steps span {
@@ -138,6 +153,7 @@ background-color: #020617;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1.5rem;
+  justify-content: center;
 }
 
 .inspiration-tags span {
