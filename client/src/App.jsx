@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Inspiration from "./pages/Inspiration";
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
     </main>
+
+      <Footer />
   </>
   );
 }
