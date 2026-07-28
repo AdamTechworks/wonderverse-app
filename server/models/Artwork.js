@@ -11,21 +11,25 @@ const artworkSchema = new mongoose.Schema(
     description: {
       type: String,
       default: "",
+      trim: true,
     },
 
     character: {
       type: String,
       default: "",
+      trim: true,
     },
 
     category: {
       type: String,
-      default: "",
+      required: true,
+      trim: true,
     },
 
     image: {
       type: String,
       required: true,
+      trim: true,
     },
 
     featured: {
@@ -36,27 +40,32 @@ const artworkSchema = new mongoose.Schema(
     timelapse: {
       type: String,
       default: "",
+      trim: true,
     },
 
     youtube: {
       type: String,
       default: "",
+      trim: true,
     },
 
     inspiration: {
       previewImage: {
         type: String,
         default: "",
+        trim: true,
       },
 
       text: {
         type: String,
         default: "",
+        trim: true,
       },
 
       youtube: {
         type: String,
         default: "",
+        trim: true,
       },
     },
   },
@@ -65,4 +74,7 @@ const artworkSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Artwork", artworkSchema);
+
+const Artwork = mongoose.model("Artwork", artworkSchema);
+
+export default Artwork;
