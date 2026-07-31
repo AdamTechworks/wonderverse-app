@@ -1,19 +1,26 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { artworks } from "../data/artworkData";
 import "./Gallery.css";
 
 function Gallery() {
+  const [artworks, setArtworks] = useState([]);
+
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [selectedArtwork, setSelectedArtwork] = useState(null);
+
+  const [loading, setLoading] = useState(true);
+
+  const [error, setError] = useState("");
 
   const featuredArtwork = artworks[currentIndex];
 
-  const [selectedArtwork, setSelectedArtwork] = useState(artworks[0]);
-
   const [isImageOpen, setIsImageOpen] = useState(false);
+
   const [zoomLevel, setZoomLevel] = useState(1);
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
+
   const [isDragging, setIsDragging] = useState(false);
 
   function handleMouseDown() {
@@ -47,6 +54,35 @@ function Gallery() {
 
   const detailSectionRef = useRef(null);
 
+  useEffect(() => {
+  async function fetchArtworks() {
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/artworks"
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch artworks");
+      }
+
+      const result = await response.json();
+
+      setArtworks(result.data);
+
+      if (result.data.length > 0) {
+        setSelectedArtwork(result.data[0]);
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Unable to load artwork.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  fetchArtworks();
+}, []);
+
   function handleArtworkClick(artwork) {
   setSelectedArtwork(artwork);
   setZoomLevel(1);
@@ -61,14 +97,18 @@ function Gallery() {
 }
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === artworks.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 10000);
+    if (artworks.length <= 1) return;
 
-    return () => clearInterval(timer);
-  }, []);
+  const timer = setInterval(() => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === artworks.length - 1
+        ? 0
+        : prevIndex + 1
+    );
+  }, 10000);
+
+  return () => clearInterval(timer);
+}, [artworks.length]);
 
 
   useEffect(() => {
@@ -83,6 +123,33 @@ function Gallery() {
   };
 }, [isImageOpen]);
 
+    if (loading) {
+      return (
+        <section className="gallery-page">
+          <h1>Gallery</h1>
+          <p>Loading artwork...</p>
+        </section>
+      );
+    }
+
+    if (error) {
+      return (
+        <section className="gallery-page">
+          <h1>Gallery</h1>
+          <p>{error}</p>
+        </section>
+      );
+    }
+
+    if (!featuredArtwork || !selectedArtwork) {
+      return (
+        <section className="gallery-page">
+          <h1>Gallery</h1>
+          <p>No artwork available.</p>
+        </section>
+      );
+    }
+
 
   return (
   <section className="gallery-page">
@@ -96,7 +163,7 @@ function Gallery() {
         <AnimatePresence mode="wait">
 
         <motion.img
-            key={featuredArtwork.id}
+            key={featuredArtwork._id}
             src={featuredArtwork.image}
             alt={featuredArtwork.title}
             initial={{
@@ -131,7 +198,7 @@ function Gallery() {
     <div className="gallery-grid">
       {artworks.map((artwork) => (
         <article className="gallery-card"
-          key={artwork.id}
+          key={artwork._id}
           onClick={() => handleArtworkClick(artwork)}
         >
           <img src={artwork.image} alt={artwork.title} />

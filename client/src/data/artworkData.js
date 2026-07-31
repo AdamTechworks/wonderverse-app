@@ -1,15 +1,3 @@
-import gogeta from "../assets/gogeta-cropped.jpg";
-import gogeta1 from "../assets/timelapses/gogeta1.mp4"
-import gokuBlue from "../assets/goku-blue.png";
-import gokublue1 from "../assets/timelapses/gokublue1.mp4"
-import gokuBlack from "../assets/goku-black-cropped.jpg";
-import gokublack from "../assets/timelapses/gokublack.mp4";
-import gokuSS4 from "../assets/goku-ssj4.png";
-import gokussj4 from "../assets/timelapses/gokussj4.mp4";
-import ultraEgoVegeta from "../assets/vegeta.png";
-import beastGohan from "../assets/gohan.png";
-import inspoGohan from "../assets/inspogohan.webp";
-import inspoVegeta from "../assets/inspovegeta.jpg";
 
 
 export const artworks = [
@@ -18,10 +6,10 @@ export const artworks = [
     title: "Fusion Reborn",
     character: "Gogeta",
     category: "Fusion Warrior",
-    image: gogeta,
+    image: "/pictures/gogeta-cropped.jpg",
     description:
       "A cinematic Gogeta illustration focused on energy balance, movement, and high-impact aura composition.",
-    timelapse: gogeta1,
+    timelapse: "/timelapses/gogeta1.mp4",
     youtube: "https://www.youtube.com/watch?v=DgCF-396oJg",
   },
 
@@ -30,10 +18,10 @@ export const artworks = [
     title: "Blue Ascension",
     character: "Goku Super Saiyan Blue",
     category: "Transformation",
-    image: gokuBlue,
+    image: "/pictures/goku-blue.png",
     description:
       "An exploration of divine energy, color contrast, and layered lighting built around Super Saiyan Blue intensity.",
-    timelapse: gokublue1,
+    timelapse: "/timelaspe/gokublue1.mp4",
     youtube: "https://www.youtube.com/watch?v=piA31FvGzZU",
   },
 
@@ -42,10 +30,10 @@ export const artworks = [
     title: "Divine Corruption",
     character: "Goku Black",
     category: "Villain Study",
-    image: gokuBlack,
+    image: "/pictures/goku-black-cropped.jpg",
     description:
       "A darker composition emphasizing atmosphere, destructive elegance, and the unsettling presence of Goku Black.",
-    timelapse: gokublack,
+    timelapse: "/timelapses/gokublack.mp4",
     youtube: "https://www.youtube.com/watch?v=Kqp_49z6gqM",
   },
 
@@ -54,10 +42,10 @@ export const artworks = [
     title: "Primal Evolution",
     character: "Goku Super Saiyan 4 Daima",
     category: "Character Concept",
-    image: gokuSS4,
+    image: "/pictures/goku-ssj4.png",
     description:
       "Focused on primal design language, aggressive color work, and reinterpretation of the Super Saiyan 4 aesthetic.",
-    timelapse: gokussj4,
+    timelapse: "/timelapses/gokussj4.mp4",
     youtube:"https://www.youtube.com/watch?v=NEpDFcZHaSk",
   },
 
@@ -66,12 +54,12 @@ export const artworks = [
     title: "God of Pride",
     character: "Ultra Ego Vegeta",
     category: "Power Study",
-    image: ultraEgoVegeta,
+    image: "/pictures/vegeta.png",
     description:
       "An energy-heavy Vegeta piece exploring destruction aura effects, sharp contrast, and dominant character posture.",
     timelapse: "",
     inspiration: {
-    previewImage: inspoVegeta,
+    previewImage: "/pictures/inspovegeta.jpg",
     text:
       "For this piece, I drew inspiration from Vegeta's fight with Granolah, focusing on the stance, energy, and dramatic lighting while creating my own interpretation.",
     youtube:"https://www.youtube.com/watch?v=PH71ZLSGNdE"
@@ -83,11 +71,11 @@ export const artworks = [
     title: "Awakened Potential",
     character: "Beast Gohan",
     category: "Transformation",
-    image: beastGohan,
+    image: "/pictures/gohan.png",
     description:
       "A dramatic character showcase built around emotional intensity, explosive lighting, and transformation symbolism.",
     inspiration: {
-    previewImage: inspoGohan,
+    previewImage: "/pictures/inspogohan.webp",
     text:
       "For this piece, I drew inspiration from Gohan's Special Beam Cannon, focusing on the stance, energy, and dramatic lighting while creating my own interpretation.",
     youtube:"https://www.youtube.com/watch?v=q8LsciU4o90"
