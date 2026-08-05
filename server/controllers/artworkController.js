@@ -3,7 +3,7 @@ import Artwork from "../models/Artwork.js";
 //GET
 export const getArtworks = async (req, res) => {
   try {
-    const artworks = await Artwork.find().sort({ createdAt: -1 });
+    const artworks = await Artwork.find().sort({ DisplayOrder: 1 });
 
     res.status(200).json({
       success: true,

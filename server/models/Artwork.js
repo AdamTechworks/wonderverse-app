@@ -36,7 +36,12 @@ const artworkSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-
+    
+    displayOrder: {
+      type: Number,
+      required: true,
+    },
+    
     timelapse: {
       type: String,
       default: "",
