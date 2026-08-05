@@ -1,3 +1,4 @@
+import { getArtworks } from "../services/artworkService";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./Gallery.css";
@@ -57,21 +58,14 @@ function Gallery() {
   useEffect(() => {
   async function fetchArtworks() {
     try {
-      const response = await fetch(
-        "http://localhost:5000/api/artworks"
-      );
+      const artworkList = await getArtworks();
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch artworks");
-      }
+    setArtworks(artworkList);
 
-      const result = await response.json();
+    if (artworkList.length > 0) {
+      setSelectedArtwork(artworkList[0]);
+    }
 
-      setArtworks(result.data);
-
-      if (result.data.length > 0) {
-        setSelectedArtwork(result.data[0]);
-      }
     } catch (err) {
       console.error(err);
       setError("Unable to load artwork.");
@@ -260,18 +254,22 @@ function Gallery() {
     </>
   )}
 
-  {!selectedArtwork.timelapse && selectedArtwork.inspiration && (
+  {!selectedArtwork.timelapse && 
+    selectedArtwork.inspiration?.previewImage && (
     <div className="inspiration-process-card">
       <img
         src={selectedArtwork.inspiration.previewImage}
-        alt="Creative inspiration"
+        alt={`Creative inspiration for ${selectedArtwork.title}`}
         className="inspiration-image"
       />
 
       <h3>🎨 Creative Inspiration</h3>
 
+      {selectedArtwork.inspiration.text && (
       <p>{selectedArtwork.inspiration.text}</p>
+     )}
 
+      {selectedArtwork.inspiration.youtube && (
       <a
         href={selectedArtwork.inspiration.youtube}
         target="_blank"
@@ -280,6 +278,7 @@ function Gallery() {
       >
         ▶ Watch the Original Scene
       </a>
+      )}
     </div>
   )}
 </div>
