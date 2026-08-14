@@ -7,6 +7,7 @@ import Gallery from "./pages/Gallery";
 import Inspiration from "./pages/Inspiration";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import Admin from "./pages/Admin";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/inspiration" element={<Inspiration />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
     </main>
 
