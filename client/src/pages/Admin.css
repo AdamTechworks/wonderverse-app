@@ -1,0 +1,342 @@
+.admin-page {
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 7rem 0 5rem;
+}
+
+.admin-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #facc15;
+  font-size: 3.5rem;
+
+  text-shadow:
+    0 0 10px rgba(250, 204, 21, 0.45),
+    0 0 20px rgba(245, 158, 11, 0.25);
+}
+
+.admin-page > button {
+  display: block;
+  margin: 0 auto 3rem;
+
+  padding: 1rem 1.6rem;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #8bb2fa;
+  color: #020617;
+
+  font-weight: 700;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.admin-page > button:hover {
+  background: #facc15;
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px rgba(250, 204, 21, 0.2);
+}
+
+/* Artwork Masonry Layout */
+
+.admin-artwork-list {
+  width: 90%;
+  max-width: 1900px;
+
+  margin: 2rem auto 0;
+
+  columns: 3 340px;
+  column-gap: 1.5rem;
+}
+
+.admin-artwork-card {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: #17245f33;
+  border: 1px solid #1e293ba4;
+
+  box-shadow:
+    0 18px 45px rgba(2, 6, 23, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.admin-artwork-card:hover {
+  transform: translateY(-6px) scale(1.01);
+
+  border-color: rgba(167, 139, 250, 0.7);
+
+  box-shadow:
+    0 20px 60px rgba(124, 58, 237, 0.22);
+}
+
+.admin-artwork-card img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+  object-fit: contain;
+
+  background: #0f172a;
+}
+
+.admin-artwork-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+
+  padding: 1.5rem;
+}
+
+.admin-artwork-card h2 {
+  color: #facc15;
+  font-size: 1.4rem;
+}
+
+.admin-artwork-card p {
+  color: #8bb2fa;
+  margin: 0;
+
+  font-size: 0.95rem;
+}
+
+.admin-artwork-card button {
+  margin-top: 0.5rem;
+
+  padding: 0.8rem 1.1rem;
+
+  border: none;
+  border-radius: 9px;
+
+  font-weight: 700;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.admin-artwork-card button:first-of-type {
+  background: #8bb2fa;
+  color: #020617;
+}
+
+.admin-artwork-card button:first-of-type:hover {
+  background: #facc15;
+  transform: translateY(-2px);
+}
+
+.admin-artwork-card button:last-of-type {
+  background: #dc2626;
+  color: white;
+}
+
+.admin-artwork-card button:last-of-type:hover {
+  background: #ef4444;
+  transform: translateY(-2px);
+}
+
+/* Modal */
+
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 999999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+
+  background: rgba(2, 6, 23, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.admin-form {
+  width: min(760px, 95vw);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  padding: 2rem;
+
+  border-radius: 20px;
+
+  background: #0f172a;
+  color: white;
+
+  box-shadow:
+    0 30px 90px rgba(2, 6, 23, 0.65);
+}
+
+.admin-edit-form {
+  border: 2px solid #facc15;
+}
+
+.admin-add-form {
+  border: 2px solid #8bb2fa;
+}
+
+.admin-form h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+
+  color: #facc15;
+}
+
+.admin-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  color: #cbd5e1;
+  font-weight: 700;
+}
+
+.admin-form input,
+.admin-form textarea {
+  width: 100%;
+
+  padding: 0.9rem 1rem;
+
+  border: 1px solid #334155;
+  border-radius: 10px;
+
+  background: #020617;
+  color: white;
+
+  font: inherit;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.admin-form input:focus,
+.admin-form textarea:focus {
+  border-color: #8bb2fa;
+
+  box-shadow:
+    0 0 0 3px rgba(139, 178, 250, 0.16);
+}
+
+.admin-form input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+
+  accent-color: #facc15;
+}
+
+.admin-form > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  margin-top: 0.5rem;
+}
+
+.admin-form button {
+  padding: 0.9rem 1.3rem;
+
+  border: none;
+  border-radius: 9px;
+
+  font-weight: 700;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.admin-form button:first-child {
+  background: #8bb2fa;
+  color: #020617;
+}
+
+.admin-form button:first-child:hover {
+  background: #facc15;
+  transform: translateY(-2px);
+}
+
+.admin-form button:last-child {
+  background: #334155;
+  color: white;
+}
+
+.admin-form button:last-child:hover {
+  background: #475569;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 1450px) {
+  .admin-artwork-list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .admin-artwork-list {
+    columns: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-page {
+    width: 94%;
+    padding-top: 6rem;
+  }
+
+  .admin-page h1 {
+    font-size: 2.6rem;
+  }
+
+  .admin-modal-overlay {
+    padding: 1rem;
+  }
+
+  .admin-form {
+    padding: 1.25rem;
+  }
+
+  .admin-form > div:last-child {
+    flex-direction: column;
+  }
+
+  .admin-form button {
+    width: 100%;
+  }
+}
