@@ -1,4 +1,5 @@
 import express from "express";
+import { protectAdmin } from "../middleware/authMiddleware.js";
 
 import {
   getArtworks,
@@ -11,10 +12,13 @@ import {
 const router = express.Router();
 
 router.get("/", getArtworks);
-router.post("/", createArtwork);
 
 router.get("/:id", getArtworkById);
-router.put("/:id", updateArtwork);
-router.delete("/:id", deleteArtwork);
+
+router.post("/", protectAdmin, createArtwork);
+
+router.put("/:id", protectAdmin, updateArtwork);
+
+router.delete("/:id", protectAdmin, deleteArtwork);
 
 export default router;
