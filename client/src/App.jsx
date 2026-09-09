@@ -8,6 +8,7 @@ import Inspiration from "./pages/Inspiration";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Admin from "./pages/Admin";
+import AdminLogin from "./pages/AdminLogin";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/inspiration" element={<Inspiration />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
     </main>

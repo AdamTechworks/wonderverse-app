@@ -340,3 +340,9 @@
     width: 100%;
   }
 }
+
+/*admin login */
+
+.admin-login-page {
+  padding-top: 8rem;
+}
