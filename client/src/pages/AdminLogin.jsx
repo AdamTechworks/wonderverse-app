@@ -1,22 +1,24 @@
 import "./Admin.css";
-
 import { useState } from "react";
 import { loginAdmin } from "../services/authService";
 
 function AdminLogin() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    
 
     async function handleSubmit(event) {
   event.preventDefault();
 
-  try {
-    const result = await loginAdmin(username, password);
+try {
+  const result = await loginAdmin(username, password);
 
-    console.log("Login successful:", result.success);
-  } catch (error) {
-    console.error("Login failed:", error);
-  }
+  sessionStorage.setItem("adminToken", result.token);
+
+  window.location.href = "/admin";
+} catch (error) {
+  console.error("Login failed:", error);
+}
 }
 
   return (

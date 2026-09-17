@@ -1,7 +1,5 @@
-import { Routes, Route } from "react-router-dom";
-
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
-
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Inspiration from "./pages/Inspiration";
@@ -25,7 +23,17 @@ function App() {
           <Route path="/inspiration" element={<Inspiration />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route
+              path="/admin"
+              element={
+                sessionStorage.getItem("adminToken") ? (
+                  <Admin />
+                ) : (
+                  <Navigate to="/admin/login" replace />
+                )
+              }
+            />
+
         </Routes>
     </main>
 

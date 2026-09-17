@@ -20,6 +20,7 @@ export async function createArtwork(artworkData) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("adminToken")}`,
     },
     body: JSON.stringify(artworkData),
   });
@@ -40,6 +41,7 @@ export async function updateArtwork(id, artworkData) {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${sessionStorage.getItem("adminToken")}`,
       },
       body: JSON.stringify(artworkData),
     }
@@ -59,6 +61,9 @@ export async function deleteArtwork(id) {
     `${API_BASE_URL}/api/artworks/${id}`,
     {
       method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${sessionStorage.getItem("adminToken")}`,
+      },
     }
   );
 

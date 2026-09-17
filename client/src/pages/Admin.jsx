@@ -135,11 +135,23 @@ const [newArtwork, setNewArtwork] = useState({
   }
 
   
-
+  function handleLogout() {
+  sessionStorage.removeItem("adminToken");
+  window.location.href = "/admin/login";
+  }
 
   return (
      <section className="admin-page">
     <h1>Admin Dashboard</h1>
+
+    <button
+        type="button"
+        onClick={handleLogout}
+        className="admin-logout-button"
+      >
+        Log Out
+   </button>
+
 
     <button
       type="button"
