@@ -1,4 +1,4 @@
-import bgImage from "../assets/gogeta.png";
+import bgImage from "../assets/gogeta.webp";
 import "./Home.css";
 
 import welcomeImage from "../assets/dragonball-top.jpg";
