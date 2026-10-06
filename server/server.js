@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import artworkRoutes from "./routes/artworkRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
 
 dotenv.config();
 
@@ -27,7 +28,8 @@ app.get("/api/health", (req, res) => {
 app.use("/api/artworks", artworkRoutes);
 //Authentication//
 app.use("/api/auth", authRoutes);
-
+// Contact
+app.use("/api/contact", contactRoutes);
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
